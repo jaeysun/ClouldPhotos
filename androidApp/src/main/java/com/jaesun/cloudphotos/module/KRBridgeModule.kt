@@ -26,14 +26,6 @@ class KRBridgeModule : KuiklyRenderBaseModule() {
                 showAlert(params, callback)
             }
 
-            "closePage" -> {
-                closePage(params)
-            }
-
-            "openPage" -> {
-                openPage(params)
-            }
-
             "copyToPasteboard" -> {
                 copyToPasteboard(params)
             }
@@ -68,10 +60,6 @@ class KRBridgeModule : KuiklyRenderBaseModule() {
 
             "dateFormatter" -> {
                 dateFormatter(params)
-            }
-
-            "replacePage" -> {
-                replacePage(params)
             }
 
             else -> callback?.invoke(
@@ -119,25 +107,6 @@ class KRBridgeModule : KuiklyRenderBaseModule() {
         (context?.getSystemService(Context.CLIPBOARD_SERVICE) as? ClipboardManager)?.also {
             it.setPrimaryClip(ClipData.newPlainText(MODULE_NAME, paramJSON.optString("content")))
         }
-    }
-
-    private fun openPage(params: String?) {
-        if (params == null) {
-            return
-        }
-        val ctx = context ?: return
-        val paramJSON = JSONObject(params)
-        val url = paramJSON.optString("url")
-        KuiklyRenderActivity.start(ctx, url, JSONObject())
-    }
-
-    private fun closePage(params: String?) {
-        activity?.finish()
-    }
-
-    private fun replacePage(params: String?) {
-        closePage(null)
-        openPage(params)
     }
 
     private fun showAlert(params: String?, callback: KuiklyRenderCallback?) {
