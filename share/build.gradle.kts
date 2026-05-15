@@ -9,7 +9,6 @@ plugins {
     id("com.tencent.kuikly-open.kuikly")
     // JSON 序列化插件
     kotlin("plugin.serialization") version "2.0.21-KBA-004"
-
 }
 
 val KEY_PAGE_NAME = "pageName"
@@ -29,7 +28,6 @@ kotlin {
             webpackTask {
                 outputFileName = "nativevue2.js" // 最后输出的名字
             }
-
             commonWebpackConfig {
                 output?.library = null // 不导出全局对象，只导出必要的入口函数
                 devtool = "source-map" // 不使用默认的 eval 执行方式构建出 source-map，而是构建单独的 sourceMap 文件

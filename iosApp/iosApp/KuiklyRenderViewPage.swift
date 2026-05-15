@@ -4,6 +4,7 @@ import SwiftUI
 struct KuiklyRenderViewPage: UIViewControllerRepresentable {
     var pageName: String
     var data: [String: Any]
+    
     //  typealiaUIViewControllerType = UINavigationController
     func makeUIViewController(context: Context) -> UINavigationController {
         let hrVC = KuiklyRenderViewController(pageName: pageName, pageData: data)

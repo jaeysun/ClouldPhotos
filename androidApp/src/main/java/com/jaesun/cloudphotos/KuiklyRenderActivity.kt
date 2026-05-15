@@ -22,6 +22,7 @@ import com.jaesun.cloudphotos.adapter.KRThreadAdapter
 import com.jaesun.cloudphotos.adapter.KRUncaughtExceptionHandlerAdapter
 import com.jaesun.cloudphotos.module.KRBridgeModule
 import com.jaesun.cloudphotos.module.KRShareModule
+import com.jaesun.cloudphotos.views.HRImageView
 import org.json.JSONObject
 
 class KuiklyRenderActivity : AppCompatActivity(), KuiklyRenderViewBaseDelegatorDelegate {
@@ -84,7 +85,9 @@ class KuiklyRenderActivity : AppCompatActivity(), KuiklyRenderViewBaseDelegatorD
     override fun registerExternalRenderView(kuiklyRenderExport: IKuiklyRenderExport) {
         super.registerExternalRenderView(kuiklyRenderExport)
         with(kuiklyRenderExport) {
-
+            renderViewExport("HRImageView", { context ->
+                HRImageView(context)
+            })
         }
     }
 

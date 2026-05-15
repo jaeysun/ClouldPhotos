@@ -1,10 +1,10 @@
 import SwiftUI
-import share
+import shared
 
 struct ContentView: View {
 
     var body: some View {
-        KuiklyRenderViewPage(pageName: "router", data: [:]).ignoresSafeArea()
+        KuiklyRenderViewPage(pageName: "splash_page", data: [:]).ignoresSafeArea()
     }
 }
 

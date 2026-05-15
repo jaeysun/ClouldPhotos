@@ -76,7 +76,7 @@
     loadingView.backgroundColor = [UIColor whiteColor];
     return loadingView;
 }
-
+//
 - (UIView *)createErrorView {
     UIView *errorView = [[UIView alloc] init];
     errorView.backgroundColor = [UIColor whiteColor];
@@ -86,7 +86,7 @@
 - (void)fetchContextCodeWithPageName:(NSString *)pageName resultCallback:(KuiklyContextCodeCallback)callback {
     if (callback) {
         // 返回对应framework名字
-        callback(@"share", nil);
+        callback(@"shared", nil);
     }
 }
 
